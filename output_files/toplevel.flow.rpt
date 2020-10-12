@@ -1,5 +1,5 @@
 Flow report for toplevel
-Sat Oct 10 21:26:11 2020
+Mon Oct 12 12:57:47 2020
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 
 
@@ -41,18 +41,18 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Sat Oct 10 21:26:11 2020       ;
+; Flow Status                     ; Successful - Mon Oct 12 12:57:47 2020       ;
 ; Quartus Prime Version           ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
 ; Revision Name                   ; toplevel                                    ;
 ; Top-level Entity Name           ; toplevel                                    ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CSEMA5F31C6                                ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 114 / 32,070 ( < 1 % )                      ;
-; Total registers                 ; 144                                         ;
+; Logic utilization (in ALMs)     ; 245 / 32,070 ( < 1 % )                      ;
+; Total registers                 ; 294                                         ;
 ; Total pins                      ; 11 / 457 ( 2 % )                            ;
 ; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 6,144 / 4,065,280 ( < 1 % )                 ;
+; Total block memory bits         ; 12,288 / 4,065,280 ( < 1 % )                ;
 ; Total DSP Blocks                ; 0 / 87 ( 0 % )                              ;
 ; Total HSSI RX PCSs              ; 0                                           ;
 ; Total HSSI PMA RX Deserializers ; 0                                           ;
@@ -68,7 +68,7 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 10/10/2020 21:25:12 ;
+; Start date & time ; 10/12/2020 12:56:04 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; toplevel            ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ agreement for further details.
 +-------------------------------------+---------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                                 ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+---------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 110814479785643.160237951205484       ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 22727991002862.160252176413148        ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                           ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)             ; <None>        ; --          ; --             ;
 ; EDA_TIME_SCALE                      ; 1 ps                                  ; --            ; --          ; eda_simulation ;
@@ -99,12 +99,12 @@ agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:10     ; 1.0                     ; 5081 MB             ; 00:00:20                           ;
-; Fitter                    ; 00:00:32     ; 1.0                     ; 6882 MB             ; 00:01:14                           ;
-; Assembler                 ; 00:00:05     ; 1.0                     ; 5040 MB             ; 00:00:05                           ;
-; TimeQuest Timing Analyzer ; 00:00:06     ; 1.1                     ; 5409 MB             ; 00:00:06                           ;
-; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 5051 MB             ; 00:00:01                           ;
-; Total                     ; 00:00:54     ; --                      ; --                  ; 00:01:46                           ;
+; Analysis & Synthesis      ; 00:00:15     ; 1.0                     ; 5082 MB             ; 00:00:30                           ;
+; Fitter                    ; 00:01:05     ; 1.0                     ; 6353 MB             ; 00:01:31                           ;
+; Assembler                 ; 00:00:06     ; 1.0                     ; 5029 MB             ; 00:00:07                           ;
+; TimeQuest Timing Analyzer ; 00:00:08     ; 1.0                     ; 5353 MB             ; 00:00:09                           ;
+; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 5046 MB             ; 00:00:02                           ;
+; Total                     ; 00:01:36     ; --                      ; --                  ; 00:02:19                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -113,11 +113,11 @@ agreement for further details.
 +---------------------------+------------------+-----------+------------+----------------+
 ; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
 +---------------------------+------------------+-----------+------------+----------------+
-; Analysis & Synthesis      ; DESKTOP-FCRA6EU  ; Windows 8 ; 6.2        ; x86_64         ;
-; Fitter                    ; DESKTOP-FCRA6EU  ; Windows 8 ; 6.2        ; x86_64         ;
-; Assembler                 ; DESKTOP-FCRA6EU  ; Windows 8 ; 6.2        ; x86_64         ;
-; TimeQuest Timing Analyzer ; DESKTOP-FCRA6EU  ; Windows 8 ; 6.2        ; x86_64         ;
-; EDA Netlist Writer        ; DESKTOP-FCRA6EU  ; Windows 8 ; 6.2        ; x86_64         ;
+; Analysis & Synthesis      ; DESKTOP-990GS3D  ; Windows 8 ; 6.2        ; x86_64         ;
+; Fitter                    ; DESKTOP-990GS3D  ; Windows 8 ; 6.2        ; x86_64         ;
+; Assembler                 ; DESKTOP-990GS3D  ; Windows 8 ; 6.2        ; x86_64         ;
+; TimeQuest Timing Analyzer ; DESKTOP-990GS3D  ; Windows 8 ; 6.2        ; x86_64         ;
+; EDA Netlist Writer        ; DESKTOP-990GS3D  ; Windows 8 ; 6.2        ; x86_64         ;
 +---------------------------+------------------+-----------+------------+----------------+
 
 

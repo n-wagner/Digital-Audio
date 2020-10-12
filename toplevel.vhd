@@ -6,17 +6,16 @@ ENTITY toplevel IS
    PORT ( CLOCK_50, CLOCK2_50, AUD_DACLRCK   : IN		STD_LOGIC;
 			AUD_ADCLRCK, AUD_BCLK, AUD_ADCDAT  	: IN    	STD_LOGIC;
 			AUD_DACDAT									: OUT		STD_LOGIC;
-			--KEY                                	: IN    	STD_LOGIC_VECTOR(0 DOWNTO 0);
+			--KEY                                	: IN    	STD_LOGIC_VECTOR(0 DOWNTO 0);     --renamed to master_reset
 			master_reset								: IN		STD_LOGIC;
 			AUD_XCK										: out   	STD_LOGIC;
 			FPGA_I2C_SDAT                      	: INOUT 	STD_LOGIC;
 			FPGA_I2C_SCLK								: OUT		STD_LOGIC
-			--finish the rest of the ports			);
 		);
 END toplevel;
 
 ARCHITECTURE Behavior OF toplevel IS
-   COMPONENT clock_generator --this component is completed for you
+   COMPONENT clock_generator
       PORT( CLOCK_27 : IN STD_LOGIC;
             reset    : IN STD_LOGIC;
             AUD_XCK  : OUT STD_LOGIC);
@@ -49,6 +48,7 @@ ARCHITECTURE Behavior OF toplevel IS
 	
 	COMPONENT controller IS
 		PORT(	CLOCK_50			:	IN		STD_LOGIC;
+				RESET				: 	IN		STD_LOGIC;
 				read_ready		:	IN		STD_LOGIC;
 				write_ready		:	IN		STD_LOGIC;
 				READ_S			:	OUT	STD_LOGIC;
@@ -60,28 +60,21 @@ ARCHITECTURE Behavior OF toplevel IS
 		);
 	END COMPONENT;
 
-   --COMPONENT --complete this component
-
-   --END COMPONENT;
-
    SIGNAL s_read_ready, s_write_ready, s_read, s_write	: STD_LOGIC;
    SIGNAL s_readdata_left, s_readdata_right            	: STD_LOGIC_VECTOR(23 DOWNTO 0);
    SIGNAL s_writedata_left, s_writedata_right          	: STD_LOGIC_VECTOR(23 DOWNTO 0);  
 	SIGNAL s_reset														: STD_LOGIC;
  
 BEGIN
-	s_reset <= NOT(master_reset);
-
-   	--YOUR "glue" CODE GOES HERE
-   	--connect the wires between the components in the correct direction
-   
-  	my_clock_gen: clock_generator PORT MAP (CLOCK2_50, s_reset, AUD_XCK);
+	s_reset <= NOT(master_reset);			-- active high reset
+										
+	my_clock_gen: clock_generator PORT MAP (CLOCK2_50, s_reset, AUD_XCK);
 	my_audio_and_video_config : audio_and_video_config	PORT MAP (CLOCK_50, s_reset, FPGA_I2C_SDAT, FPGA_I2C_SCLK);
 	my_audio_codec : audio_codec PORT MAP(CLOCK_50, s_reset, s_read, s_write, s_writedata_left, s_writedata_right,
 										AUD_ADCDAT, AUD_BCLK, AUD_ADCLRCK, AUD_DACLRCK, s_read_ready, s_write_ready,
 										s_readdata_left, s_readdata_right, AUD_DACDAT);
-	my_controller : controller	PORT MAP (CLOCK_50, s_read_ready, s_write_ready, s_read, s_write,
+									
+	my_controller : controller	PORT MAP (CLOCK_50, s_reset, s_read_ready, s_write_ready, s_read, s_write,
 													s_readdata_left, s_readdata_right, s_writedata_left, s_writedata_right);
 
-  
 END Behavior;

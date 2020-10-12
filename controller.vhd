@@ -21,31 +21,29 @@ ARCHITECTURE BEHAVIORAL OF controller IS
 	SIGNAL s_current_sample_right : STD_LOGIC_VECTOR(23 DOWNTO 0);
 BEGIN
 
+	
+
 	control_proc : process (CLOCK_50)
 	begin
-		if (reset = '0') then --active low reset
+		if (reset = '1') then --active high reset
 			READ_S <= '0';
 			WRITE_S <= '0';
 			s_current_sample_left <= "000000000000000000000000";
 			s_current_sample_right <= "000000000000000000000000";
-		elsif rising_edge(CLOCK_50) then
-			if (read_ready = '1') then
+		else
+			READ_S <= read_ready;
+			WRITE_S <= write_ready;
+			if (write_ready = '1') then
 				s_current_sample_left <= readdata_left;
 				s_current_sample_right <= readdata_right;
-				READ_S <= '1';
-				WRITE_S <= '0';
-			elsif (write_ready = '1') then
-				WRITEDATA_LEFT <= s_current_sample_left;
-				WRITEDATA_RIGHT <= s_current_sample_right;
-				READ_S <= '0';
-				WRITE_S <= '1';
 			else
 				s_current_sample_left <= s_current_sample_left;
 				s_current_sample_right <= s_current_sample_right;
-				READ_S <= '0';
-				WRITE_S <= '0';
 			end if;
+
 		end if;
+		WRITEDATA_LEFT <= s_current_sample_left;
+		WRITEDATA_RIGHT <= s_current_sample_right;
 	end process;
 
 END BEHAVIORAL;
