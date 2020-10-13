@@ -1,0 +1,33 @@
+# Copyright (C) 1991-2016 Altera Corporation. All rights reserved.
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, the Altera Quartus Prime License Agreement,
+# the Altera MegaCore Function License Agreement, or other 
+# applicable license agreement, including, without limitation, 
+# that your use is for the sole purpose of programming logic 
+# devices manufactured by Altera and sold by Altera or its 
+# authorized distributors.  Please refer to the applicable 
+# agreement for further details.
+
+# Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
+# File: C:\Users\jkase\Documents\UM\Fall2020\ECE 417 - Emedded Systems\AudioLab\AudioLab.csv
+# Generated on: Sat Oct 10 21:19:05 2020
+
+# Note: The column header names should not be changed if you wish to import this .csv file into the Quartus Prime software.
+
+To,Direction,Location,I/O Bank,VREF Group,I/O Standard,Reserved,Current Strength,Slew Rate,Differential Pair,Transceiver Analog Settings Protocol,VCCR_GXB/VCCT_GXB Voltage,Transceiver I/O Pin Termination,Transceiver Dedicated Refclk Pin Termination,Transmitter Common Mode Driver Voltage,Transmitter Slew Rate Control,Transmitter Differential Output Voltage,Receiver Buffer Common Mode Voltage,Strict Preservation,Fitter Location
+AUD_ADCDAT,Input,PIN_K7,8A,B8A_N0,2.5 V,,,,,,,,,,,,,,PIN_K7
+AUD_ADCLRCK,Input,PIN_K8,8A,B8A_N0,2.5 V,,,,,,,,,,,,,,PIN_K8
+AUD_BCLK,Input,PIN_H7,8A,B8A_N0,2.5 V,,,,,,,,,,,,,,PIN_H7
+AUD_DACDAT,Output,PIN_J7,8A,B8A_N0,2.5 V,,,,,,,,,,,,,,PIN_J7
+AUD_DACLRCK,Input,PIN_H8,8A,B8A_N0,2.5 V,,,,,,,,,,,,,,PIN_H8
+AUD_XCK,Output,PIN_G7,8A,B8A_N0,2.5 V,,,,,,,,,,,,,,PIN_G7
+CLOCK2_50,Input,PIN_AA16,4A,B4A_N0,2.5 V,,,,,,,,,,,,,,PIN_AA16
+CLOCK_50,Input,PIN_AF14,3B,B3B_N0,2.5 V,,,,,,,,,,,,,,PIN_AF14
+FPGA_I2C_SCLK,Output,PIN_J12,8A,B8A_N0,2.5 V,,,,,,,,,,,,,,PIN_J12
+FPGA_I2C_SDAT,Bidir,PIN_K12,8A,B8A_N0,2.5 V,,,,,,,,,,,,,,PIN_K12
+master_reset,Input,PIN_AA14,3B,B3B_N0,2.5 V,,,,,,,,,,,,,,PIN_AA14
